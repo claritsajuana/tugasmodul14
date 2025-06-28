@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hitung Luas Trapesium</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Hitung Luas Trapesium</h2>
+    <form>
+      <label for="a">Sisi Atas (a):</label>
+      <input type="number" id="a" placeholder="Contoh: 10" required>
+
+      <label for="b">Sisi Bawah (b):</label>
+      <input type="number" id="b" placeholder="Contoh: 15" required>
+
+      <label for="t">Tinggi (t):</label>
+      <input type="number" id="t" placeholder="Contoh: 8" required>
+
+      <button type="button" onclick="hitung()">Hitung Luas</button>
+
+      <div id="hasil"></div>
+    </form>
+  </div>
+
+  <script>
+    function hitung() {
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      const t = parseFloat(document.getElementById("t").value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(t)) {
+        document.getElementById("hasil").innerText = "Isi semua input dengan benar!";
+        return;
+      }
+
+      const luas = 0.5 * (a + b) * t;
+      document.getElementById("hasil").innerText = `Luas Trapesium: ${luas}`;
+    }
+  </script>
+</body>
+</html>
